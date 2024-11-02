@@ -30,7 +30,7 @@ namespace Zenehallgatas
             borderPanel.BackColor = AppStyle.BORDER_COLOR;
 
             // Navigációs modul beállítása
-            ContentController.init(this);
+            ContentController.init(this, contentPanel);
             ContentController.setContent(new NewZeneUserControl(), "Új Zene");
         }
     }

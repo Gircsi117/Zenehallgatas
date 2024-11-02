@@ -30,6 +30,7 @@
         {
             this.borderPanel = new System.Windows.Forms.Panel();
             this.menuComp = new Zenehallgatas.Components.MenuComponent();
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // borderPanel
@@ -51,12 +52,21 @@
             this.menuComp.TabIndex = 0;
             this.menuComp.Text = "menuComponent1";
             // 
+            // contentPanel
+            // 
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(0, 38);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(800, 412);
+            this.contentPanel.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.borderPanel);
             this.Controls.Add(this.menuComp);
             this.Name = "Form1";
@@ -69,6 +79,7 @@
         #endregion
         private System.Windows.Forms.Panel borderPanel;
         private Components.MenuComponent menuComp;
+        private System.Windows.Forms.Panel contentPanel;
     }
 }
 

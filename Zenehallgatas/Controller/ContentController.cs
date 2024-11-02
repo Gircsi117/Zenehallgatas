@@ -12,22 +12,23 @@ namespace Zenehallgatas.Controller
     public static class ContentController
     {
         public static Form1 form;
+        public static Panel contentPanel;
         public static UserControl content;
 
         // Form elmentése
-        public static void init(Form1 initForm)
+        public static void init(Form1 initForm, Panel panel)
         {
-            if(form != null) return;
             form = initForm;
+            contentPanel = panel;
         }
         
         // A form tartalmi részének módosítása
         public static void setContent(UserControl newContent, string title)
         {
-            form.Controls.Remove(content);
+            contentPanel.Controls.Clear();
             content = newContent;
             form.Text = $"{form.title} - {title}";
-            form.Controls.Add(content);
+            contentPanel.Controls.Add(content);
         }
 
     }
