@@ -19,6 +19,6 @@ namespace Zenehallgatas.Model
         public static readonly Color FONT_COLOR = Color.White;
         
         // A használható méretek
-        public static readonly int INPUT_HEIGHT = 30;
+        public static readonly int INPUT_HEIGHT = 26;
     }
 }

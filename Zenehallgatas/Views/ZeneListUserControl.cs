@@ -17,6 +17,8 @@ namespace Zenehallgatas.Views
             InitializeComponent();
 
             this.Dock = DockStyle.Fill;
+
+        
         }
     }
 }
