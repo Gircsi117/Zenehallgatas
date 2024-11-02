@@ -12,10 +12,12 @@ namespace Zenehallgatas.Components
     {
         public ButtonComponent()
         {
+            // Gomb megjelenésének beállítása
             this.BackColor = AppStyle.BUTTON_COLOR;
             this.ForeColor = AppStyle.FONT_COLOR;
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
+            this.Height = AppStyle.INPUT_HEIGHT;
         }
     }
 }

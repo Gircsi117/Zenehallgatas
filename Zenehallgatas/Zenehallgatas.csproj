@@ -50,9 +50,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Components\MenuComponent.cs" />
-    <Compile Include="Components\MenuItemComponent.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controller\ContentController.cs" />
     <Compile Include="Controller\ZeneController.cs" />
     <Compile Include="DAO\IZeneDao.cs" />
     <Compile Include="DAO\ZeneMemoryDao.cs" />
