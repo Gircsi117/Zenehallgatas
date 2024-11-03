@@ -20,6 +20,7 @@ namespace Zenehallgatas.Model
         
         // A használható méretek
         public static readonly int INPUT_HEIGHT = 25;
+        public static readonly int GAP_SIZE = 20;
 
         // Betűtípusok
         public static readonly string FONT_FAMILY = "Arial";

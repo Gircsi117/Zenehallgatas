@@ -34,5 +34,10 @@ namespace Zenehallgatas.Model
             this.Hossz = hossz;
             this.Prioritas = priorotas;
         }
+
+        public string[] getTableData()
+        {
+            return new string[] { this.Cim, this.Eloado, this.Kiadas.ToString(), this.Hossz.ToString(), this.Prioritas.ToString() };
+        }
     }
 }

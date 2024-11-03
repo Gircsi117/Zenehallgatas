@@ -34,11 +34,11 @@ namespace Zenehallgatas.Views
 
         public NewZeneUserControl()
         {
+            InitializeComponent();
+
             this.Dock = DockStyle.Fill;
             this.Load += this.onLoad;
             this.Resize += this.onResize;
-
-            InitializeComponent();
         }
 
         public void onLoad(object sender, EventArgs e)
@@ -51,6 +51,10 @@ namespace Zenehallgatas.Views
             {
                 TextBoxComponent t = boxes[i];
                 Label l = labels[i];
+                Point p = new Point(-100, -100);
+
+                t.Location = p;
+                l.Location = p;
 
                 l.Text = titles[i];
                 l.Font = t.Font;
@@ -68,8 +72,7 @@ namespace Zenehallgatas.Views
 
         private void onResize(object sender, EventArgs e)
         {
-            int gap = 25;
-            int width = (this.Width / 2) - gap;
+            int width = (this.Width / 2) - AppStyle.GAP_SIZE;
 
             // labelek és textboxok lekérése listaként
             Label[] labels = this.getLabels();
@@ -82,15 +85,15 @@ namespace Zenehallgatas.Views
 
                 // TextBox beállítása
                 t.Size = new Size(width, t.Height);
-                t.Location = new Point(this.Width / 2, (gap + (t.Size.Height * i) + (i * gap)));
+                t.Location = new Point(this.Width / 2, (AppStyle.GAP_SIZE + (t.Size.Height * i) + (i * AppStyle.GAP_SIZE)));
 
                 // Label beállítása
                 l.Size = t.Size;
-                l.Location = new Point(gap, t.Location.Y);
+                l.Location = new Point(AppStyle.GAP_SIZE, t.Location.Y);
             }
 
             // Mentés gomb beállítása
-            this.saveBTN.Location = new Point(this.Width - this.saveBTN.Width - gap, this.Height - this.saveBTN.Height - gap);
+            this.saveBTN.Location = new Point(this.Width - this.saveBTN.Width - AppStyle.GAP_SIZE, this.Height - this.saveBTN.Height - AppStyle.GAP_SIZE);
         }
 
         private void saveZene(object sender, EventArgs e)
@@ -129,6 +132,7 @@ namespace Zenehallgatas.Views
             // Zene mentése
             Zene zene = new Zene(0, cimSTR, eloadoSTR, kiadasINT, hosszINT, priorINT);
             bool result = ZeneController.getInstance().addZene(zene);
+
             if (!result)
             {
                 MessageBox.Show("A zene felvétele sikertelen!", "Hiba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -138,11 +142,13 @@ namespace Zenehallgatas.Views
             MessageBox.Show("A zene felvétele sikeres!", "Siker!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        // TextBox-ok visszaadása tömbként
         private TextBoxComponent[] getTextBoxes()
         {
             return new TextBoxComponent[5] { this.cimTBOX, this.eloadoTBOX, this.kiadasTBOX, this.hosszTBOX, this.prioritasTBOX };
         }
 
+        // Label-ek visszaadása tömbként
         private Label[] getLabels()
         {
             return new Label[5] { this.cimLabel, this.eloadoLabel, this.kiadasLabel, this.hosszLabel, this.prioritasLabel};
