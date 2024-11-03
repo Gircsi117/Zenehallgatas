@@ -35,9 +35,9 @@ namespace Zenehallgatas.Model
             this.Prioritas = priorotas;
         }
 
-        public string[] getTableData()
+        public object[] getTableData()
         {
-            return new string[] { this.Cim, this.Eloado, this.Kiadas.ToString(), this.Hossz.ToString(), this.Prioritas.ToString() };
+            return new object[] { this.Cim, this.Eloado, this.Kiadas, this.Hossz, this.Prioritas };
         }
     }
 }
