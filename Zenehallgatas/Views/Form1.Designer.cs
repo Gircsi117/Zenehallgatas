@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.borderPanel = new System.Windows.Forms.Panel();
-            this.menuComp = new Zenehallgatas.Components.MenuComponent();
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.menuComp = new Zenehallgatas.Components.MenuComponent();
             this.SuspendLayout();
             // 
             // borderPanel
@@ -39,8 +39,16 @@
             this.borderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.borderPanel.Location = new System.Drawing.Point(0, 37);
             this.borderPanel.Name = "borderPanel";
-            this.borderPanel.Size = new System.Drawing.Size(800, 1);
+            this.borderPanel.Size = new System.Drawing.Size(784, 1);
             this.borderPanel.TabIndex = 1;
+            // 
+            // contentPanel
+            // 
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(0, 38);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(784, 423);
+            this.contentPanel.TabIndex = 2;
             // 
             // menuComp
             // 
@@ -48,27 +56,20 @@
             this.menuComp.Location = new System.Drawing.Point(0, 0);
             this.menuComp.Name = "menuComp";
             this.menuComp.Padding = new System.Windows.Forms.Padding(8);
-            this.menuComp.Size = new System.Drawing.Size(800, 37);
+            this.menuComp.Size = new System.Drawing.Size(784, 37);
             this.menuComp.TabIndex = 0;
             this.menuComp.Text = "menuComponent1";
-            // 
-            // contentPanel
-            // 
-            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPanel.Location = new System.Drawing.Point(0, 38);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(800, 412);
-            this.contentPanel.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.borderPanel);
             this.Controls.Add(this.menuComp);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Zenehallgatás";
             this.ResumeLayout(false);

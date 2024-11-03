@@ -19,6 +19,13 @@ namespace Zenehallgatas.Model
         public static readonly Color FONT_COLOR = Color.White;
         
         // A használható méretek
-        public static readonly int INPUT_HEIGHT = 26;
+        public static readonly int INPUT_HEIGHT = 25;
+
+        // Betűtípusok
+        public static readonly string FONT_FAMILY = "Arial";
+        public static readonly Font LABEL_FONT = new Font(FONT_FAMILY, 14);
+        public static readonly Font INPUT_FONT = new Font(FONT_FAMILY, 14);
+        public static readonly Font BUTTON_FONT = new Font(FONT_FAMILY, 10);
+
     }
 }

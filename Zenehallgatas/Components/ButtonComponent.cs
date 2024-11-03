@@ -18,6 +18,7 @@ namespace Zenehallgatas.Components
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Height = AppStyle.INPUT_HEIGHT;
+            this.Font = AppStyle.BUTTON_FONT;
         }
     }
 }

@@ -21,6 +21,10 @@ namespace Zenehallgatas.Controller
 
         public static ZeneController getInstance()
         {
+            if (instance == null)
+            {
+                instance = new ZeneController();
+            }
             return instance;
         }
 
