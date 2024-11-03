@@ -13,6 +13,7 @@ namespace Zenehallgatas.Components
         public TextBoxComponent()
         {
             this.BorderStyle = BorderStyle.FixedSingle;
+            
         }
     }
 }

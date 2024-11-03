@@ -46,7 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Name = "NewZeneUserControl";
-            this.Size = new System.Drawing.Size(583, 315);
+            this.Size = new System.Drawing.Size(598, 316);
             this.ResumeLayout(false);
             this.PerformLayout();
 
