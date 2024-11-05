@@ -24,7 +24,7 @@ namespace Zenehallgatas.DAO
             return new Zene();
         }
 
-        public IEnumerable<Zene> getAllZene()
+        public List<Zene> getAllZene()
         {
             return new List<Zene> { };
         }

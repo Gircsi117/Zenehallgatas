@@ -12,6 +12,6 @@ namespace Zenehallgatas.DAO
         bool addZene(Zene zene);
         bool modifyZene(Zene zene);
         Zene getZeneById(int zeneId);
-        IEnumerable<Zene> getAllZene();
+        List<Zene> getAllZene();
     }
 }
