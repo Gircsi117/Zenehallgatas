@@ -14,7 +14,7 @@ namespace Zenehallgatas.Controller
         private static ZeneController instance; 
         private static IZeneDao dao;
 
-        public ZeneController()
+        private ZeneController()
         {
             dao = new ZeneMemoryDao();
         }
