@@ -73,6 +73,7 @@ namespace Zenehallgatas.Views
                 l.Font = t.Font;
                 l.ForeColor = AppStyle.FONT_COLOR;
 
+                // Adatok feltöltése a kiválasztott zene adataival
                 if (this.selectedZene != null)
                 {
                     var property = this.selectedZene.GetType().GetProperty(keys[i]);
@@ -154,6 +155,18 @@ namespace Zenehallgatas.Views
 
             // Zene mentése
             Zene zene = new Zene(0, cimSTR, eloadoSTR, kiadasINT, hosszINT, priorINT);
+            if(this.selectedZene != null)
+            {
+                zene.ID = this.selectedZene.ID;
+            }
+
+            if (this.selectedZene == null) this.createZene(zene);
+            if (this.selectedZene != null) this.modifyZene(zene);
+        }
+
+        // Zene létrehozása
+        private void createZene(Zene zene)
+        {
             bool result = ZeneController.getInstance().addZene(zene);
 
             if (!result)
@@ -163,6 +176,20 @@ namespace Zenehallgatas.Views
             }
 
             MessageBox.Show("A zene felvétele sikeres!", "Siker!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Zene módosítása
+        private void modifyZene(Zene zene)
+        {
+            bool result = ZeneController.getInstance().modifyZene(zene);
+
+            if (!result)
+            {
+                MessageBox.Show("A zene módosítása sikertelen!", "Hiba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("A zene módosítása sikeres!", "Siker!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         // TextBox-ok visszaadása tömbként
