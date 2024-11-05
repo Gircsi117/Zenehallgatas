@@ -54,7 +54,7 @@ namespace Zenehallgatas.Views
                 new Zene(3, "Monster", "Egy Isten", 2012, 140, 20),
                 new Zene(4, "Pedró Pedró", "Mosómaci", 2024, 10, 30),
             };
-            //this.list = ZeneController.getInstance().getAllZene().ToList();
+            this.list = ZeneController.getInstance().getAllZene();
 
             // Sorok hozzáadása
             foreach (Zene zene in this.list)

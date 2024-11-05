@@ -43,7 +43,7 @@ namespace Zenehallgatas.Controller
             return dao.getZeneById(id);
         }
 
-        public IEnumerable<Zene> getAllZene()
+        public List<Zene> getAllZene()
         {
             return dao.getAllZene();
         }
