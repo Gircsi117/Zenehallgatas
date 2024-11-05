@@ -32,18 +32,31 @@ namespace Zenehallgatas.Views
 
         private ButtonComponent saveBTN = new ButtonComponent();
 
+        private Zene selectedZene;
+
         public NewZeneUserControl()
         {
-            InitializeComponent();
-
             this.Dock = DockStyle.Fill;
             this.Load += this.onLoad;
             this.Resize += this.onResize;
+
+            InitializeComponent();
+        }
+
+        public NewZeneUserControl(Zene zene)
+        {
+            this.Dock = DockStyle.Fill;
+            this.Load += this.onLoad;
+            this.Resize += this.onResize;
+            this.selectedZene = zene;
+
+            InitializeComponent();
         }
 
         public void onLoad(object sender, EventArgs e)
         {
             string[] titles = new string[5] { "Cím", "Előadó", "Kiadás éve", "Zene hossza", "Prioritás" };
+            string[] keys = new string[5] { "Cim", "Eloado", "Kiadas", "Hossz", "Prioritas" };
             Label[] labels = this.getLabels();
             TextBoxComponent[] boxes = this.getTextBoxes();
 
@@ -60,11 +73,21 @@ namespace Zenehallgatas.Views
                 l.Font = t.Font;
                 l.ForeColor = AppStyle.FONT_COLOR;
 
+                if (this.selectedZene != null)
+                {
+                    var property = this.selectedZene.GetType().GetProperty(keys[i]);
+                    if (property != null)
+                    {
+                        t.Text = property.GetValue(this.selectedZene).ToString();
+                    }
+                }
+
                 this.Controls.Add(t);
                 this.Controls.Add(l);
             }
 
-            this.saveBTN.Text = "Mentés";
+            this.saveBTN.Text = this.selectedZene == null ? "Mentés" : "Módosítás";
+            this.saveBTN.Size = new Size(100, this.saveBTN.Height);
             this.saveBTN.Click += this.saveZene; 
 
             this.Controls.Add(this.saveBTN);

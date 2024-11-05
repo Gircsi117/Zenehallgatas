@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zenehallgatas.Model
 {
-    internal class Zene
+    public class Zene
     {
         public int ID { get; set; }
         public string Cim {  get; set; }
@@ -37,7 +37,14 @@ namespace Zenehallgatas.Model
 
         public object[] getTableData()
         {
-            return new object[] { this.Cim, this.Eloado, this.Kiadas, this.Hossz, this.Prioritas };
+            return new object[] {
+                this.ID.ToString(),
+                this.Cim,
+                this.Eloado,
+                this.Kiadas.ToString(),
+                this.Hossz.ToString(),
+                this.Prioritas.ToString()
+            };
         }
     }
 }
