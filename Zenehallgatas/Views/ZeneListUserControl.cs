@@ -39,21 +39,20 @@ namespace Zenehallgatas.Views
             this.dataTable.Columns.Add("Eloado", "Előadó");
             this.dataTable.Columns.Add("Kiadas", "Kiadás éve");
             this.dataTable.Columns.Add("Hossz", "Zene hossza");
-            this.dataTable.Columns.Add("Prioritas", "Prioritás");
+            //this.dataTable.Columns.Add("Prioritas", "Prioritás");
 
             foreach (DataGridViewColumn col in this.dataTable.Columns)
             {
                 col.ReadOnly = true;
             }
-            this.dataTable.Columns["Prioritas"].ReadOnly = false;
 
             // Teszt adatok
-            this.list = new List<Zene> {
+            /*this.list = new List<Zene> {
                 new Zene(1, "Kiskacs fürdik", "Valami gyerek zenész", 2004, 30, 10),
                 new Zene(2, "Kocsog kurva (török gyerekdal)", "Egy török zseni", 2018, 80, 15),
                 new Zene(3, "Monster", "Egy Isten", 2012, 140, 20),
                 new Zene(4, "Pedró Pedró", "Mosómaci", 2024, 10, 30),
-            };
+            };*/
             this.list = ZeneController.getInstance().getAllZene();
 
             // Sorok hozzáadása
@@ -95,7 +94,9 @@ namespace Zenehallgatas.Views
                     return;
                 }
 
-                string id = selectedRow.Cells[0].Value.ToString();
+                string id = selectedRow.Cells[0]?.Value?.ToString() ?? "";
+                if(id == "") return;
+
                 Zene item = list.Find(x=> x.ID.ToString() == id);
 
                 if (item == null)

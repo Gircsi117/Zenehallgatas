@@ -83,6 +83,11 @@ namespace Zenehallgatas.Views
                     }
                 }
 
+                if (i < keys.Length - 1 && selectedZene != null)
+                {
+                    t.ReadOnly = true;
+                }
+
                 this.Controls.Add(t);
                 this.Controls.Add(l);
             }
